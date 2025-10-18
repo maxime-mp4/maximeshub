@@ -1,0 +1,36 @@
+* {
+  font-family: 'Rubik', sans-serif;
+  @apply box-border
+}
+
+.title {
+  font-family: 'BBH Sans Bartle', sans-serif;
+}
+
+p {
+  @apply text-justify
+}
+
+h1{
+  @apply text-xl sm:text-4xl
+}
+
+h2 {
+  @apply text-lg sm:text-2xl
+}
+
+/* Applique à tous les Twemoji */
+img.emoji {
+  display: inline-block;
+  width: 1em;
+  position: relative;
+  top: -0.1em;
+}
+
+ul::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+ul {
+  -ms-overflow-style: none;  /* IE 10+ */
+  scrollbar-width: none;     /* Firefox */
+}

@@ -1,11 +1,53 @@
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+import HomeView from './views/HomeView.vue'
+
+const scrollY = ref(0)
+
+const handleScroll = () => {
+  scrollY.value = window.scrollY
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+
+const headerRef = ref(null)
+
+const getHeaderHeight = () => {
+  if (headerRef.value) {
+    return headerRef.value.clientHeight
+  }
+  return 0
+}
+
+
+</script>
+
 <template>
-  <!-- <nav class="fixed top-0 p-1 bg-white/10 px-4 backdrop-blur-xl w-full m-0 flex items-center justify-between">
-    <span class="font-bold"> maxime/{{ $route.fullPath.slice(1) != "" ? $route.fullPath.slice(1) : "home" }}.html</span>
-    <ul class="text-white/80">
-      <RouterLink class="py-1 px-2 hover:bg-white/30 rounded-sm transition duration-100" to="/">Home</RouterLink>
-      <RouterLink class="py-1 px-2 hover:bg-white/30 rounded-sm transition duration-100" to="/about">About</RouterLink>
-      <a class="py-1 px-2 hover:bg-white/30 rounded-sm transition duration-100">Linkedin <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-    </ul>
-  </nav> -->
-    <RouterView class="h-screen flex items-center overflow-hidden" />
+
+      <header ref="headerRef" class="relative w-full min-h-8 items-center flex justify-center bg-emerald-500/50 text-neutral-800 text-center">
+        <span>Tracker Disabled. Coming back summer 2028.</span>
+      </header>
+
+      <nav :class='["transition-all duration-500 max-w-full py-1 flex justify-center items-center gap-4 sticky px-3  backdrop-blur-xs z-50", scrollY > getHeaderHeight() ? "m-2 rounded-[1rem] border top-1.5 border-neutral-400/50 bg-neutral-200/75" : "border-transparent top-0"]'>
+        <a class="active:bg-neutral-400/75 h-8 flex items-center px-2 rounded-full" href="#"><i class="fa fa-solid fa-home"></i><span class="hidden mx-1 lg:block">Home</span></a>
+        <a class="active:bg-neutral-400/75 h-8 flex items-center px-2 rounded-full" href="#whoami"><i class="fa fa-solid fa-user"></i><span class="hidden mx-1 lg:block">Who Am I?</span></a>
+        <a class="active:bg-neutral-400/75 h-8 flex items-center px-2 rounded-full" href="#projects"><i class="fa fa-solid fa-folder"></i><span class="hidden mx-1 lg:block">Projects</span></a>
+        <a class="active:bg-neutral-400/75 h-8 flex items-center px-2 rounded-full" href="#skills-technologies"><i class="fa fa-solid fa-hashtag"></i><span class="hidden mx-1 lg:block">Skills & Technologies</span></a>
+        <a class="active:bg-neutral-400/75 h-8 flex items-center px-2 rounded-full" href="#langages"><i class="fa-solid fa-language"></i><span class="hidden mx-1 lg:block">Languages</span></a>
+        <a class="active:bg-neutral-400/75 h-8 flex items-center px-2 rounded-full" href="#contact"><i class="fa fa-solid fa-envelope"></i><span class="hidden mx-1 lg:block">Contact</span></a>
+      </nav>
+
+      <HomeView class="m-8 md:mx-24 lg:mx-48 xl:mx-96 2xl:mx-144"/>
+
+
+      <footer class="relative w-full min-h-8 items-center flex justify-center bg-emerald-500/50 text-neutral-800 text-center">
+        <span>Tracker Disabled. Coming back summer 2028.</span>
+      </footer>
 </template>
+
