@@ -2,6 +2,9 @@
   font-family: 'Rubik', sans-serif;
   @apply box-border
 }
+html {
+  @apply scroll-smooth select-none
+}
 
 .title {
   font-family: 'BBH Sans Bartle', sans-serif;

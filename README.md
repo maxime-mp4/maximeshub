@@ -1,44 +1,40 @@
-# portfolio_v1
+# Maxime's Hub
 
-This template should help get you started developing with Vue 3 in Vite.
+My personnal website. It showcases my skills, projects, and a little bit about me.
 
-## Recommended IDE Setup
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 💻 Technologies Used
 
-## Recommended Browser Setup
+- **Framework / Library:** Vue.js & Tailwind CSS
+- **Languages:** HTML, CSS, JavaScript  
+- **Tools:** Vercel for deployment
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+---
 
-## Customize configuration
+## 🚀 Features
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- Showcase of my skills and experiences
+- Projects / achievements section
+- Smooth navigation with anchor links
+- Responsive design (mobile and desktop friendly)
 
-## Project Setup
+---
 
-```sh
-npm install
+## 📂 Project Structure
+
+```
+.
+├── src/
+    ├── assets/
+    ├── views/
+    ├── App.vue
+    └── main.js
+├── index.html
+└── README.md
 ```
 
-### Compile and Hot-Reload for Development
+---
 
-```sh
-npm run dev
-```
+## 📦 Deployment
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+The site is deployed on Vercel and you can access it [clicking here](https://yandhi.me).

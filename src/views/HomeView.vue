@@ -98,9 +98,9 @@ const onWheel = (e) => {
       <section id="langages" class="flex flex-col gap-2">
         <h2 class="title">Languages</h2>
         <ul class="flex flex-wrap gap-2">
-          <li class="cursor-pointer hover:scale-110 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-gradient-to-r from-blue-500  via-neutral-50 to-red-500 rounded-full">French (Native)</li>
-          <li class="cursor-pointer hover:scale-110 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-conic from-red-400 via-red-500 to-red-400 rounded-full">English</li>
-          <li class="cursor-pointer hover:scale-110 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-gradient-to-r from-red-500 to-yellow-300 rounded-full">Spanish</li>
+          <li class="cursor-pointer hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-gradient-to-r from-blue-500  via-neutral-50 to-red-500 rounded-full">French (Native)</li>
+          <li class="cursor-pointer hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-conic from-red-400 via-red-500 to-red-400 rounded-full">English</li>
+          <li class="cursor-pointer hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-gradient-to-r from-red-500 to-yellow-300 rounded-full">Spanish</li>
         </ul>
       </section>
 
