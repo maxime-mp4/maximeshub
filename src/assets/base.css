@@ -22,18 +22,21 @@ h2 {
   @apply text-lg sm:text-2xl
 }
 
-/* Applique à tous les Twemoji */
-img.emoji {
-  display: inline-block;
-  width: 1em;
-  position: relative;
-  top: -0.1em;
-}
 
 ul::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge */
+  display: none;
 }
 ul {
-  -ms-overflow-style: none;  /* IE 10+ */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.v-enter-active,
+.v-leave-active {
+  @apply opacity-100 transition-all
+}
+
+.v-enter-from,
+.v-leave-to {
+  @apply opacity-0 translate-y-10 
 }

@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from 'vue';
 
+const toggled = ref([]);
+
 const carousel = ref(null);
 
 // Scroll horizontal avec smooth
@@ -110,10 +112,33 @@ const onWheel = (e) => {
           <p>Contact is not available at the moment.</p>
 
           <div class="flex gap-4 flex-wrap justify-between">
-            <button class="p-2 rounded-xl hover:scale-105 bg-emerald-300 drop-shadow border border-neutral-500/50 active:-translate-y-1 transition-all font-bold cursor-not-allowed w-24">GitHub</button>
-            <button class="p-2 rounded-xl hover:scale-105 bg-emerald-300 drop-shadow border border-neutral-500/50 active:-translate-y-1 transition-all font-bold cursor-not-allowed w-24">LinkedIn</button>
-            <button class="p-2 rounded-xl hover:scale-105 bg-emerald-300 drop-shadow border border-neutral-500/50 active:-translate-y-1 transition-all font-bold cursor-not-allowed w-24">Email</button>
-            <button class="p-2 rounded-xl hover:scale-105 bg-emerald-300 drop-shadow border border-neutral-500/50 active:-translate-y-1 transition-all font-bold cursor-not-allowed w-24">Discord</button>
+            <div class="relative flex flex-col items-center">
+              <button @click="toggled[0] = !toggled[0]" class="p-2 rounded-xl hover:scale-105 bg-emerald-300 drop-shadow border border-neutral-500/50 active:-translate-y-1 transition-all font-bold cursor-not-allowed w-24">GitHub</button>
+            <transition>
+                <div v-if="toggled[0]" class="absolute flex flex-col top-10 bg-neutral-900 p-2 my-2 w-max rounded-xl font-bold text-sm text-white"><span>maxime-mp4</span><a target="_blank" href="https://github.com/maxime-mp4" class="text-xs underline opacity-50 font-normal italic active:opacity-75 hover:opacity-75 transition-opacity">Click here to open</a></div>
+              </transition>
+            </div>
+
+            <div class="relative flex flex-col items-center">
+              <button @click="toggled[1] = !toggled[1]" class="p-2 rounded-xl hover:scale-105 bg-emerald-300 drop-shadow border border-neutral-500/50 active:-translate-y-1 transition-all font-bold cursor-not-allowed w-24">LinkedIn</button>
+             <transition>
+                <div v-if="toggled[1]" class="absolute top-10 bg-neutral-900 p-2 my-2 w-max rounded-xl font-bold text-sm text-white">No LinkedIn.</div>
+              </transition>
+            </div>
+
+            <div class="relative flex flex-col items-center">
+              <button @click="toggled[2] = !toggled[2]" class="p-2 rounded-xl hover:scale-105 bg-emerald-300 drop-shadow border border-neutral-500/50 active:-translate-y-1 transition-all font-bold cursor-not-allowed w-24">Email</button>
+              <transition>
+                <div v-if="toggled[2]" class="absolute top-10 bg-neutral-900 p-2 my-2 w-max rounded-xl font-bold text-sm text-white">No mail.</div>
+              </transition>
+            </div>
+            
+            <div class="relative flex flex-col items-center">
+              <button @click="toggled[3] = !toggled[3]" class="p-2 rounded-xl hover:scale-105 bg-emerald-300 drop-shadow border border-neutral-500/50 active:-translate-y-1 transition-all font-bold cursor-not-allowed w-24">Discord</button>
+              <transition>
+                <div v-if="toggled[3]" class="absolute top-10 bg-neutral-900 p-2 my-2 w-max rounded-xl font-bold text-sm text-white">@maximedu91</div>
+              </transition>
+            </div>
           </div>
         </div>
 
