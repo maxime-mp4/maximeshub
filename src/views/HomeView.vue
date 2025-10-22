@@ -35,21 +35,21 @@ const onWheel = (e) => {
         <h2 class="title">Projects</h2>
         <p>None of these projects are searchable for now.</p>
         <ul class="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 scrollbar-hide" @wheel="onWheel" ref="carousel">
-          <li class="bg-white border border-neutral-500 p-4 h-64 aspect-square flex flex-col justify-evenly items-center rounded-2xl">
+          <li class="dark:bg-neutral-900 bg-white border border-neutral-500 p-4 h-64 aspect-square flex flex-col justify-evenly items-center rounded-2xl">
             <div class="flex flex-col justify-center items-center">
             <i class="fas py-4 fa-2xl fa-laptop-code"></i>
             <span class="font-black text-center text-lg">Portfolio Website</span>
             </div>
             <p>This very site you're on! Built to showcase my skills and projects.</p>
           </li>
-          <li class="bg-white border border-neutral-500 p-4 h-64 aspect-square flex flex-col justify-evenly items-center rounded-2xl">
+          <li class="dark:bg-neutral-900 bg-white border border-neutral-500 p-4 h-64 aspect-square flex flex-col justify-evenly items-center rounded-2xl">
             <div class="flex flex-col justify-center items-center">
               <i class="fas py-4 fa-2xl fa-music"></i>
               <span class="font-black text-center text-lg">Tracker</span>
             </div>
             <p>A web app to listen to unreleased music.</p>
           </li>
-          <li class="bg-white border border-neutral-500 p-4 h-64 aspect-square flex flex-col justify-evenly items-center rounded-2xl">
+          <li class="dark:bg-neutral-900 bg-white border border-neutral-500 p-4 h-64 aspect-square flex flex-col justify-evenly items-center rounded-2xl">
             <div class="flex flex-col justify-center items-center">
               <i class="fas py-4 fa-2xl fa-gamepad"></i>
               <span class="font-black text-center text-lg">S101</span>
@@ -68,31 +68,31 @@ const onWheel = (e) => {
         <article>
             <h3 class="font-black text-lg">Hard Skills</h3>
             <ul class="flex flex-wrap gap-2">
-              <li class="cursor-pointer hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-gradient-to-r from-red-600 to-red-400 rounded-full">Mathematics & Data Analysis</li>
-              <li class="cursor-pointer hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-gradient-to-l from-neutral-400 to-neutral-500 rounded-full">Modeling</li>
-              <li class="cursor-pointer hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-conic/decreasing from-lime-500 via-blue-500 to-lime-500 rounded-full">UI Design</li>
-              <li class="cursor-pointer hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-conic from-neutral-500 via-neutral-50 to-neutral-500 rounded-full">UX Design</li>
+              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-gradient-to-r from-red-600 to-red-400 rounded-full">Mathematics & Data Analysis</li>
+              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-gradient-to-l from-neutral-400 to-neutral-500 rounded-full">Modeling</li>
+              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-conic/decreasing from-lime-500 via-blue-500 to-lime-500 rounded-full">UI Design</li>
+              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-conic from-neutral-500 via-neutral-50 to-neutral-500 rounded-full">UX Design</li>
             </ul>
         </article>
         <article>
             <h3 class="font-black text-lg">Soft Skills</h3>
             <ul class="flex flex-wrap gap-2">
-              <li class="cursor-pointer hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-rose-400 rounded-full">Teamwork & Collaboration</li>
-              <li class="cursor-pointer hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-lime-300 rounded-full">Problem Solving</li>
-              <li class="cursor-pointer hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-gradient-to-tr from-teal-200 to-teal-500 rounded-full">Adaptability</li>
+              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-rose-400 rounded-full">Teamwork & Collaboration</li>
+              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-lime-300 rounded-full">Problem Solving</li>
+              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-gradient-to-tr from-teal-200 to-teal-500 rounded-full">Adaptability</li>
             </ul>
         </article>
         <article>
             <h3 class="font-black text-lg">Technologies</h3>
             <ul class="flex flex-wrap gap-2">
-              <li class="cursor-pointer hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md transition-all px-2 py-1 font-bold bg-gradient-to-bl from-blue-600 to-yellow-400 rounded-full">Python</li>
-              <li class="cursor-pointer hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md transition-all px-2 py-1 font-bold bg-yellow-300 rounded-full">JavaScript</li>
-              <li class="cursor-pointer hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md transition-all px-2 py-1 font-bold bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">C/C++</li>
-              <li class="cursor-pointer hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md transition-all px-2 py-1 font-bold bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">C#</li>
-              <li class="cursor-pointer hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md transition-all px-2 py-1 font-bold bg-emerald-700 rounded-full">Vue.js</li>
-              <li class="cursor-pointer hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md transition-all px-2 py-1 font-bold bg-sky-500 rounded-full">Tailwind CSS</li>
-              <li class="cursor-pointer hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md transition-all px-2 py-1 font-bold bg-orange-500 rounded-full">SQL</li>
-              <li class="cursor-pointer hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md transition-all px-2 py-1 font-bold bg-red-500 rounded-full">Ruby</li>
+              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md transition-all px-2 py-1 font-bold bg-gradient-to-bl from-blue-600 to-yellow-400 rounded-full">Python</li>
+              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md transition-all px-2 py-1 font-bold bg-yellow-300 rounded-full">JavaScript</li>
+              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md transition-all px-2 py-1 font-bold bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">C/C++</li>
+              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md transition-all px-2 py-1 font-bold bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">C#</li>
+              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md transition-all px-2 py-1 font-bold bg-emerald-700 rounded-full">Vue.js</li>
+              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md transition-all px-2 py-1 font-bold bg-sky-500 rounded-full">Tailwind CSS</li>
+              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md transition-all px-2 py-1 font-bold bg-orange-500 rounded-full">SQL</li>
+              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md transition-all px-2 py-1 font-bold bg-red-500 rounded-full">Ruby</li>
             </ul>
         </article>
       </section>
@@ -100,43 +100,37 @@ const onWheel = (e) => {
       <section id="langages" class="flex flex-col gap-2">
         <h2 class="title">Languages</h2>
         <ul class="flex flex-wrap gap-2">
-          <li class="cursor-pointer hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-gradient-to-r from-blue-500  via-neutral-50 to-red-500 rounded-full">French (Native)</li>
-          <li class="cursor-pointer hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-conic from-red-400 via-red-500 to-red-400 rounded-full">English</li>
-          <li class="cursor-pointer hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-gradient-to-r from-red-500 to-yellow-300 rounded-full">Spanish</li>
+          <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-gradient-to-r from-blue-500  via-neutral-50 to-red-500 rounded-full">French (Native)</li>
+          <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-conic from-red-400 via-red-500 to-red-400 rounded-full">English</li>
+          <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-gradient-to-r from-red-500 to-yellow-300 rounded-full">Spanish</li>
         </ul>
       </section>
 
       <section id="contact" class="flex flex-col gap-12 h-64">
         <div class="flex flex-col gap-2">
           <h2 class="title">Contact</h2>
-          <p>Contact is not available at the moment.</p>
 
           <div class="flex gap-4 flex-wrap justify-between">
-            <div class="relative flex flex-col items-center">
-              <button @click="toggled[0] = !toggled[0]" class="p-2 rounded-xl hover:scale-105 bg-emerald-300 drop-shadow border border-neutral-500/50 active:-translate-y-1 transition-all font-bold cursor-not-allowed w-24">GitHub</button>
-            <transition>
-                <div v-if="toggled[0]" class="absolute flex flex-col top-10 bg-neutral-900 p-2 my-2 w-max rounded-xl font-bold text-sm text-white"><span>maxime-mp4</span><a target="_blank" href="https://github.com/maxime-mp4" class="text-xs underline opacity-50 font-normal italic active:opacity-75 hover:opacity-75 transition-opacity">Click here to open</a></div>
-              </transition>
-            </div>
+
 
             <div class="relative flex flex-col items-center">
-              <button @click="toggled[1] = !toggled[1]" class="p-2 rounded-xl hover:scale-105 bg-emerald-300 drop-shadow border border-neutral-500/50 active:-translate-y-1 transition-all font-bold cursor-not-allowed w-24">LinkedIn</button>
+              <button @click="toggled[1] = !toggled[1]" class="p-2 rounded-xl hover:scale-105 bg-emerald-300 dark:bg-emerald-700 drop-shadow border border-neutral-500/50 active:-translate-y-1 transition-all font-bold cursor-not-allowed w-24">LinkedIn</button>
              <transition>
-                <div v-if="toggled[1]" class="absolute top-10 bg-neutral-900 p-2 my-2 w-max rounded-xl font-bold text-sm text-white">No LinkedIn.</div>
+                <div v-if="toggled[1]" class="absolute z-50 border border-neutral-500/50 top-10 bg-neutral-900 p-2 my-2 w-max rounded-xl font-bold text-sm text-white">No LinkedIn.</div>
               </transition>
             </div>
 
             <div class="relative flex flex-col items-center">
-              <button @click="toggled[2] = !toggled[2]" class="p-2 rounded-xl hover:scale-105 bg-emerald-300 drop-shadow border border-neutral-500/50 active:-translate-y-1 transition-all font-bold cursor-not-allowed w-24">Email</button>
+              <button @click="toggled[2] = !toggled[2]" class="p-2 rounded-xl hover:scale-105 bg-emerald-300 dark:bg-emerald-700 drop-shadow border border-neutral-500/50 active:-translate-y-1 transition-all font-bold cursor-not-allowed w-24">Email</button>
               <transition>
-                <div v-if="toggled[2]" class="absolute top-10 bg-neutral-900 p-2 my-2 w-max rounded-xl font-bold text-sm text-white">No mail.</div>
+                <div v-if="toggled[2]" class="absolute z-50 border border-neutral-500/50 top-10 bg-neutral-900 p-2 my-2 w-max rounded-xl font-bold text-sm text-white">No mail.</div>
               </transition>
             </div>
             
             <div class="relative flex flex-col items-center">
-              <button @click="toggled[3] = !toggled[3]" class="p-2 rounded-xl hover:scale-105 bg-emerald-300 drop-shadow border border-neutral-500/50 active:-translate-y-1 transition-all font-bold cursor-not-allowed w-24">Discord</button>
+              <button @click="toggled[3] = !toggled[3]" class="p-2 rounded-xl hover:scale-105 bg-emerald-300 dark:bg-emerald-700 drop-shadow border border-neutral-500/50 active:-translate-y-1 transition-all font-bold cursor-not-allowed w-24">Discord</button>
               <transition>
-                <div v-if="toggled[3]" class="absolute top-10 bg-neutral-900 p-2 my-2 w-max rounded-xl font-bold text-sm text-white">@maximedu91</div>
+                <div v-if="toggled[3]" class="absolute z-50 border border-neutral-500/50 top-10 bg-neutral-900 p-2 my-2 w-max rounded-xl font-bold text-sm text-white">@maximedu91</div>
               </transition>
             </div>
           </div>
@@ -145,6 +139,11 @@ const onWheel = (e) => {
         <div class="flex flex-col items-center">
           <span>Made with <i class="fas fa-heart text-red-500"></i></span>
           <span>This website uses Vue.js 3 & Tailwind CSS</span>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <a target="_blank" href="https://github.com/maxime-mp4" class="opacity-50"><i class="fa fa-github fa-3x"></i></a>
+          <a target="_blank" href="https://github.com/maxime-mp4/maximeshub" class="text-sm opacity-50 underline italic">Or the repository of this website</a>
         </div>
 
       </section>

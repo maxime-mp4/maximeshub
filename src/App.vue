@@ -47,7 +47,7 @@ function switchTheme() {
 
 <template>
 
-      <header ref="headerRef" class="relative w-full min-h-8 items-center flex justify-center bg-emerald-500 text-neutral-800 text-center">
+      <header ref="headerRef" class="relative w-full min-h-8 items-center flex justify-center bg-gradient-to-r from-emerald-500 to-teal-600 text-neutral-800 text-center">
         <span>Tracker Disabled. Coming back summer 2028.</span>
       </header>
 
@@ -62,12 +62,12 @@ function switchTheme() {
 
       <HomeView class="m-8 md:mx-24 lg:mx-48 xl:mx-96 2xl:mx-144"/>
 
-      <button @click="switchTheme()" :class="['m-4 cursor-pointer sticky bottom-4 h-8 aspect-square rounded-2xl transition-all duration-500', currentTheme === 'dark' ? 'bg-emerald-500' : 'bg-transparent']">
+      <button @click="switchTheme()" :class="['m-4 cursor-pointer sticky bottom-4 h-8 aspect-square rounded-2xl transition-all duration-500 border border-neutral-500/50', currentTheme === 'dark' ? 'bg-emerald-500' : 'bg-neutral-200 lg:bg-transparent']">
         <i class='fa-solid fa-moon'></i>
       </button>
 
 
-      <footer class="relative w-full min-h-8 items-center flex justify-center bg-emerald-500 text-neutral-800 text-center">
+      <footer class="relative w-full min-h-8 items-center flex justify-center bg-gradient-to-r from-emerald-500 to-teal-600 text-neutral-800 text-center">
         <span>Tracker Disabled. Coming back summer 2028.</span>
       </footer>
 </template>
