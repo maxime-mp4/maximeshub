@@ -40,3 +40,27 @@ ul {
 .v-leave-to {
   @apply opacity-0 translate-y-10 
 }
+
+.translate-enter-from {
+  transform: translateX(-40px);
+  opacity: 0;
+}
+
+/* État de sortie (à la fin) */
+.translate-leave-to {
+  transform: translateX(-40px);
+  opacity: 0;
+}
+
+/* Transition commune pour les deux états */
+.translate-enter-active,
+.translate-leave-active {
+  transition: all .5s ease;
+}
+
+/* Apparence normale */
+.translate-enter-to,
+.translate-leave-from {
+  transform: translateY(0);
+  opacity: 1;
+}
