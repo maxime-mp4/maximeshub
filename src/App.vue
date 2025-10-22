@@ -75,17 +75,17 @@ function scrollUp() {
 
   <HomeView class="m-8 md:mx-24 lg:mx-48 xl:mx-96 2xl:mx-144" />
 
-  <ul class="flex sticky bottom-0">
+  <ul class="p-2 flex sticky bottom-0 gap-2">
     <li>
       <button @click="switchTheme()"
-        :class="['relative z-50 mx-1.5 my-4 cursor-pointer h-8 aspect-square rounded-2xl transition-all duration-500 border border-neutral-500/50', currentTheme === 'dark' ? 'bg-emerald-500' : 'bg-neutral-200 lg:bg-transparent']">
+        :class="['relative z-50 cursor-pointer h-8 aspect-square rounded-2xl transition-all duration-500 border border-neutral-500/50', currentTheme === 'dark' ? 'bg-emerald-500' : 'bg-neutral-200 lg:bg-transparent']">
         <i class='fa-solid fa-moon'></i>
       </button>
     </li>
     <li>
       <Transition name="translate">
         <button v-if="scrollY > 300" @click="scrollUp()"
-          :class="['relative z-40 mx-1.5 my-4 cursor-pointer h-8 aspect-square rounded-2xl transition-all duration-500 border border-neutral-500/50', currentTheme === 'dark' ? 'bg-emerald-500' : 'bg-neutral-200 lg:bg-transparent']">
+          :class="['relative z-40 cursor-pointer h-8 aspect-square rounded-2xl transition-all duration-500 border border-neutral-500/50', currentTheme === 'dark' ? 'bg-emerald-500' : 'bg-neutral-200 lg:bg-transparent']">
           <i class='fa-solid fa-chevron-up'></i>
         </button>
       </Transition>
