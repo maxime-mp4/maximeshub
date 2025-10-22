@@ -148,7 +148,5 @@ const onWheel = (e) => {
 
       </section>
 
-      <span class="my-12 italic text-neutral-500 ">This website was rushed due to time constraints. For anyone exploring source code, please be aware of potential issues and do not take account of them.<br/>NB: I may rework this website and make it dynamic in the future, and I hope before reworking tracker.</span>
-
   </main>
 </template>
