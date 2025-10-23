@@ -5,22 +5,21 @@ const toggled = ref([]);
 
 const carousel = ref(null);
 
-// Scroll horizontal avec smooth
 const onWheel = (e) => {
   e.preventDefault();
   carousel.value.scrollBy({
     left: e.deltaY,
-    behavior: 'smooth', // smooth scroll
+    behavior: 'smooth',
   });
 };
 </script>
 
 <template>
   <main class="home min-h-screen flex flex-col gap-12">
-      <hgroup id="#home">
+      <section id="home">
         <h1 class="title">Maxime's Hub</h1>
         <p>Developer. Creator. Always learning.</p>
-      </hgroup>
+      </section>
 
       <section id="whoami" class="flex flex-col gap-2">
         <h2 class="title">Who am I ?</h2>

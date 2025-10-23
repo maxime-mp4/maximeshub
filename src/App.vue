@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted, computed, watch, Transition } from 'vue'
+import { ref, onMounted, onUnmounted, computed, Transition, nextTick } from 'vue'
 import HomeView from './views/HomeView.vue'
 
 const scrollY = ref(0)
@@ -14,7 +14,7 @@ const theme = ref('light')
 const currentTheme = computed(() => theme.value)
 
 
-onMounted(() => {
+onMounted(async () => {
   if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark')
     theme.value = 'dark'
@@ -24,17 +24,19 @@ onMounted(() => {
     
   }
 
+  await nextTick()
   updateNavbarHighlight()
 
   
 
   window.addEventListener("hashchange", updateNavbarHighlight)
+  window.addEventListener("resize", updateNavbarHighlight)
 
   window.addEventListener('scroll', handleScroll)
 })
 
 function updateNavbarHighlight() {
-      const newHash = window.location.hash.substring(1);
+    const newHash = window.location.hash.substring(1);
     const navbar = document.getElementById("navbar");
     const navbarChildren = navbar?.children;
     const texts = Array.from(navbarChildren).slice(1).map(child => child.href.split("#")[1]);
@@ -87,7 +89,7 @@ function scrollUp() {
 
   <nav id="navbar"
     :class='["m-4 transition-all duration-500 w-max mx-auto py-1 flex justify-center items-center gap-4 sticky px-3  backdrop-blur-xs z-50 rounded-full top-1.5 border", scrollY > getHeaderHeight() ? "border-neutral-400/50 bg-neutral-200/75 dark:bg-neutral-800/75" : "border-transparent"]'>
-    <div class="opacity-0 left-0 duration-500 transition-all h-8 w-32 bg-neutral-400/75 absolute rounded-full z-0"></div>
+    <div class="opacity-0 left-0 duration-500 transition-all h-8 bg-neutral-400/75 absolute rounded-full z-0"></div>
     <a class="active:text-neutral-400 transition-all hover:text-neutral-400 h-8 flex items-center px-2 rounded-full relative z-10"
       href="#home"><i class="fa fa-solid fa-home"></i><span class="hidden mx-1 lg:block">Home</span></a>
     <a class="active:text-neutral-400 transition-all hover:text-neutral-400 h-8 flex items-center px-2 rounded-full relative z-10"
