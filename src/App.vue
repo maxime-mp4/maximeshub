@@ -21,9 +21,38 @@ onMounted(() => {
   } else {
     theme.value = 'light'
     document.documentElement.classList.remove('dark')
+    
   }
+
+  updateNavbarHighlight()
+
+  
+
+  window.addEventListener("hashchange", updateNavbarHighlight)
+
   window.addEventListener('scroll', handleScroll)
 })
+
+function updateNavbarHighlight() {
+      const newHash = window.location.hash.substring(1);
+    const navbar = document.getElementById("navbar");
+    const navbarChildren = navbar?.children;
+    const texts = Array.from(navbarChildren).slice(1).map(child => child.href.split("#")[1]);
+    for (let i = 0; i < texts.length; ++i) {
+      const element = texts[i];
+      if (element === newHash) {
+        const childPosition = navbarChildren[i + 1].getBoundingClientRect().left + window.scrollX;
+        const navbarPosition = navbar.getBoundingClientRect().left + window.scrollX;
+        const offset = childPosition - navbarPosition;
+        const background = navbarChildren[0];
+        background.style.transform = `translateX(${offset}px)`;
+        background.style.width = `${navbarChildren[i + 1].clientWidth}px`;
+        background.style.height = `${navbarChildren[i + 1].clientHeight}px`;
+        background.style.opacity = '1';
+        break;
+      }
+    }
+  }
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
@@ -56,20 +85,21 @@ function scrollUp() {
     <span>Tracker Disabled. Coming back summer 2028.</span>
   </header>
 
-  <nav
-    :class='["transition-all duration-500 max-w-full py-1 flex justify-center items-center gap-4 sticky px-3  backdrop-blur-xs z-50", scrollY > getHeaderHeight() ? "m-2 rounded-[1rem] border top-1.5 border-neutral-400/50 bg-neutral-200/75 dark:bg-neutral-800/75" : "border-transparent top-0"]'>
-    <a class="active:bg-neutral-400/75 transition-all hover:bg-neutral-400/75 h-8 flex items-center px-2 rounded-full"
-      href="#"><i class="fa fa-solid fa-home"></i><span class="hidden mx-1 lg:block">Home</span></a>
-    <a class="active:bg-neutral-400/75 transition-all hover:bg-neutral-400/75 h-8 flex items-center px-2 rounded-full"
+  <nav id="navbar"
+    :class='["m-4 transition-all duration-500 w-max mx-auto py-1 flex justify-center items-center gap-4 sticky px-3  backdrop-blur-xs z-50 rounded-full top-1.5 border", scrollY > getHeaderHeight() ? "border-neutral-400/50 bg-neutral-200/75 dark:bg-neutral-800/75" : "border-transparent"]'>
+    <div class="opacity-0 left-0 duration-500 transition-all h-8 w-32 bg-neutral-400/75 absolute rounded-full z-0"></div>
+    <a class="active:text-neutral-400 transition-all hover:text-neutral-400 h-8 flex items-center px-2 rounded-full relative z-10"
+      href="#home"><i class="fa fa-solid fa-home"></i><span class="hidden mx-1 lg:block">Home</span></a>
+    <a class="active:text-neutral-400 transition-all hover:text-neutral-400 h-8 flex items-center px-2 rounded-full relative z-10"
       href="#whoami"><i class="fa fa-solid fa-user"></i><span class="hidden mx-1 lg:block">Who Am I?</span></a>
-    <a class="active:bg-neutral-400/75 transition-all hover:bg-neutral-400/75 h-8 flex items-center px-2 rounded-full"
+    <a class="active:text-neutral-400 transition-all hover:text-neutral-400 h-8 flex items-center px-2 rounded-full relative z-10"
       href="#projects"><i class="fa fa-solid fa-folder"></i><span class="hidden mx-1 lg:block">Projects</span></a>
-    <a class="active:bg-neutral-400/75 transition-all hover:bg-neutral-400/75 h-8 flex items-center px-2 rounded-full"
+    <a class="active:text-neutral-400 transition-all hover:text-neutral-400 h-8 flex items-center px-2 rounded-full relative z-10"
       href="#skills-technologies"><i class="fa fa-solid fa-hashtag"></i><span class="hidden mx-1 lg:block">Skills &
         Technologies</span></a>
-    <a class="active:bg-neutral-400/75 transition-all hover:bg-neutral-400/75 h-8 flex items-center px-2 rounded-full"
-      href="#langages"><i class="fa-solid fa-language"></i><span class="hidden mx-1 lg:block">Languages</span></a>
-    <a class="active:bg-neutral-400/75 transition-all hover:bg-neutral-400/75 h-8 flex items-center px-2 rounded-full"
+    <a class="active:text-neutral-400 transition-all hover:text-neutral-400 h-8 flex items-center px-2 rounded-full relative z-10"
+      href="#languages"><i class="fa-solid fa-language"></i><span class="hidden mx-1 lg:block">Languages</span></a>
+    <a class="active:text-neutral-400 transition-all hover:text-neutral-400 h-8 flex items-center px-2 rounded-full relative z-10"
       href="#contact"><i class="fa fa-solid fa-envelope"></i><span class="hidden mx-1 lg:block">Contact</span></a>
   </nav>
 
