@@ -1,23 +1,35 @@
 <script setup>
+import ProjectCard from '@/components/ProjectCard.vue';
 import { ref } from 'vue';
 
 const toggled = ref([]);
-
 const carousel = ref(null);
 
 const onWheel = (e) => {
   e.preventDefault();
   carousel.value.scrollBy({
     left: e.deltaY,
-    behavior: 'smooth',
   });
+};
+
+const carouselScroll = (deltaY) => {
+  const maxScroll = carousel.value.scrollWidth - carousel.value.clientWidth;
+  const currentScroll = carousel.value.scrollLeft;
+  
+  if (deltaY > 0 && currentScroll >= maxScroll) {
+    carousel.value.scrollTo({ left: 0, behavior: "smooth" });
+  } else if (deltaY < 0 && currentScroll <= 0) {
+    carousel.value.scrollTo({ left: maxScroll, behavior: "smooth" });
+  } else {
+    carousel.value.scrollBy({ left: deltaY, behavior: "smooth" });
+  }
 };
 </script>
 
 <template>
   <main class="home min-h-screen flex flex-col gap-12">
       <section id="home">
-        <h1 class="title">Maxime's Hub</h1>
+        <h1>Maxime's Hub</h1>
         <p>Developer. Creator. Always learning.</p>
       </section>
 
@@ -30,44 +42,50 @@ const onWheel = (e) => {
         </p>
       </section>
 
-      <section id="projects" class="flex flex-col gap-2">
-        <h2 class="title">Projects</h2>
-        <ul class="flex overflow-x-auto snap-x snap-mandatory gap-4 p-4 scrollbar-hide" @wheel="onWheel" ref="carousel">
-          <li class="dark:bg-neutral-900 hover:scale-105 hover:-translate-y-2 transition-all bg-white border border-neutral-500 p-4 h-64 aspect-square flex flex-col justify-evenly items-center rounded-2xl">
-            <div class="flex flex-col justify-center items-center">
-            <i class="fas py-4 fa-2xl fa-laptop-code"></i>
-            <span class="font-black text-center text-lg">Portfolio Website</span>
-            </div>
-            <p>This very site you're on! Built to showcase my skills and projects.</p>
+      <section id="projects" class="flex items-center justify-between flex-wrap gap-2">
+        <div>
+          <h2 class="title">Projects</h2>
+          <p>Some repositories may be private.</p>
+        </div>
+        <div class="px-2 flex gap-4">
+          <button class="h-12 active:scale-105 aspect-square flex rounded-full transition justify-center items-center hover:bg-neutral-800" @click="carouselScroll(-200)"><i class="fas fa-chevron-left"></i></button>
+          <button class="h-12 active:scale-105 aspect-square flex rounded-full transition justify-center items-center hover:bg-neutral-800" @click="carouselScroll(200)"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <ul class="flex overflow-x-auto snap-x snap-mandatory gap-4 py-4 scrollbar-hide" @wheel="onWheel" ref="carousel">
+          <li>
+            <ProjectCard class="w-72 lg:w-96" :project="{
+              icon: 'fa-music',
+              title: 'Tracker',
+              description: 'A web app to listen to unreleased music.',
+              techStack: ['Vue.js', 'Tailwind CSS', 'JavaScript']
+            }"/>
           </li>
-          <li class="dark:bg-neutral-900 hover:scale-105 hover:-translate-y-2 transition-all bg-white border border-neutral-500 p-4 h-64 aspect-square flex flex-col justify-evenly items-center rounded-2xl">
-            <div class="flex flex-col justify-center items-center">
-              <i class="fas py-4 fa-2xl fa-music"></i>
-              <span class="font-black text-center text-lg">Tracker</span>
-            </div>
-            <p>A web app to listen to unreleased music.</p>
+          <li>
+            <ProjectCard :project="{
+              icon: 'fa-layer-group',
+              title: 'Yepi',
+              description: 'An API for Ye\'s unreleased music. Working with Tracker.',
+              techStack: ['JavaScript', 'Node.js', 'Express'  ]
+            }" />
           </li>
-          <li class="dark:bg-neutral-900 hover:scale-105 hover:-translate-y-2 transition-all bg-white border border-neutral-500 p-4 h-64 aspect-square flex flex-col justify-evenly items-center rounded-2xl">
-            <div class="flex flex-col justify-center items-center">
-              <i class="fas py-4 fa-2xl fa-layer-group"></i>
-              <span class="font-black text-center text-lg">Yepi</span>
-            </div>
-            <p>An API for Ye's unreleased music. Working with Tracker.</p>
-            <a class="italic underline" target="_blank" href="https://api.yandhi.me/">Available here!</a>
+          <li>
+            <ProjectCard :project="{
+              icon: 'fa-gamepad',
+              title: 'S101',
+              description: 'Creation of a Pac-Man type game using C++',
+              techStack: ['C++', 'Makefile', 'OOP']
+            }" />
+
           </li>
-          <li class="dark:bg-neutral-900 hover:scale-105 hover:-translate-y-2 transition-all bg-white border border-neutral-500 p-4 h-64 aspect-square flex flex-col justify-evenly items-center rounded-2xl">
-            <div class="flex flex-col justify-center items-center">
-              <i class="fas py-4 fa-2xl fa-gamepad"></i>
-              <span class="font-black text-center text-lg">S101</span>
-            </div>
-            <p>Creation of a Pac-Man type game using C++</p>
-          </li>
-          <li class="dark:bg-neutral-900 hover:scale-105 hover:-translate-y-2 transition-all bg-white border border-neutral-500 p-4 h-64 aspect-square flex flex-col justify-evenly items-center rounded-2xl">
-            <div class="flex flex-col justify-center items-center">
-              <i class="fas py-4 fa-2xl fa-palette"></i>
-              <span class="font-black text-center text-lg">Chromata</span>
-            </div>
-            <p>Managing color palettes and themes for applications. Archived in 2021.</p>
+          <li>
+
+            <ProjectCard :project="{
+              icon: 'fa-palette',
+              title: 'Chromata',
+              description: 'Managing color palettes and themes for applications.',
+              techStack: ['', 'Electron', 'JavaScript']
+            }" />
+
           </li>
           
         </ul>
