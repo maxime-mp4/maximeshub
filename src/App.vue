@@ -100,14 +100,14 @@ function updateNavbarHighlight() {
 <template>
 
   <header @click="toggled[0] = !toggled[0]" ref="headerRef"
-    :class="[toggled[0] ? 'w-2/3' : 'w-full', 'announcement-banner transition-all duration-800']">
-    <span>Tracker Disabled. Coming back summer 2028.</span>
+    :class="[toggled[0] ? 'lg:w-2/3' : 'w-full', 'announcement-banner']">
+    <span>Tracker Disabled. Coming back summer 2028. Click here for more info.</span>
   </header>
 
   <NavbarComponent :class="[{'-translate-x-1/3': toggled[0]}]" :scrollY="scrollY" :headerRef="headerRef"
     :navbarElements="navbarElements" />
   <HomeView :class="[{'-translate-x-1/3': toggled[0]}]"
-    class="mx-8 lg:w-3/4 xl:w-1/2 lg:mx-auto transition-all duration-600" />
+    class="mx-8 lg:w-3/4 xl:w-1/2 lg:mx-auto mb-24 transition-all duration-1000" />
 
   <ul class="p-2 flex sticky bottom-0 gap-2">
     <li>
@@ -127,26 +127,66 @@ function updateNavbarHighlight() {
   </ul>
 
   <Transition name="translate-left">
-    <div v-if="toggled[0]"
-      class="flex flex-col right-0 z-99 h-screen w-7/20 bg-neutral-800 fixed top-0 border border-neutral-500 rounded-2xl p-4">
-      <div class="flex justify-between items-center">
-        <p class="font-black text-xl">Where went the tracker?</p>
+
+    <section v-if="toggled[0]"
+      class="flex flex-col gap-6 right-0 z-99 w-full px-12 min-h-screen lg:w-7/20 bg-neutral-800 fixed top-0 lg:border border-neutral-500 lg:rounded-2xl p-4">
+      
+      <header class="flex justify-between items-center">
+        <p class="font-bold text-lg lg:text-xl">Tracker Current State</p>
         <button @click="toggled[0] = false"
-          class="h-8 hover:bg-neutral-200 p-2 rounded-full transition-all hover:text-neutral-800 cursor-pointer flex items-center text-neutral-500">
+          class="h-8 active:bg-neutral-200 hover:bg-neutral-200 p-2 rounded-full transition-all hover:text-neutral-800 cursor-pointer flex items-center text-neutral-500">
           <span>Close</span>
           <i class="fa-solid fa-xmark fa-xl"></i>
         </button>
+      </header>
+      
+      <div class="flex flex-col gap-4">
+        <p>
+          The tracker project is currently undergoing a full rework and is expected to be on hold until at least summer 2028.
+          My studies take up a lot of time, and since this is a large and complex project that I'm developing on my own, it requires
+          a significant amount of effort and dedication. I also want to make sure that the final result is as polished and high-quality as possible,
+          so I'm taking the time needed to do things right.
+        </p>
+        <p>
+          I've also decided to replace the current version of the tracker (which is unfinished and not very optimized) with this new website.
+          Don't worry though — the tracker isn't forgotten. It's simply being redesigned and improved to ensure that when it returns, it's the best version it can be.
+        </p>
       </div>
-      <div class="mt-4">
-        <p>The tracker has been disabled and will return in summer 2028.</p>
-        <p class="mt-2">In the meantime, feel free to explore the rest of the website!</p>
+      
+      <div class="flex flex-col gap-4">
+        <p>API is now currently public, and can be found <a class="underline" target="_blank" href="https://api.yandhi.me">here</a>.</p>
+      </div>
+
+      <p class="font-bold text-lg lg:text-xl">Quick API guide</p>
+      <div class="flex flex-col gap-4">
+        <p>
+          To get started with the API, simply make a GET request to the base URL: <span class="italic font-semibold">https://api.yandhi.me/</span>.
+          If a request returns "Route not found", ensure that you are using the correct endpoint and that it is properly defined in the API documentation.
+        </p>
+        <p>
+          From there, you can access various endpoints to retrieve different types of data.
+          For example, to get era information, you can make a GET request to <code>https://api.yandhi.me/eras/:id</code>,
+          replacing <code>{id}</code> with the actual ID of the era you want to retrieve.
+        </p>
+        
+        <p class="font-semibold underline">Current endpoints :</p>
+        
+        <div>
+          <p>/eras/:id - Get information about a specific era by its ID.</p>
+          <p>/eras - Get a list of all eras.</p>
+          <p>/unreleased/:id - Get information about a specific unreleased item by its ID.</p>
+          <p>/unreleased - Get a list of all unreleased items.</p>
         </div>
-    </div>
+
+        <p class="italic">If you wonder how to retrieve IDs, just found it. It's pretty random.<br>I recommend using directly the global endpoint and search manually a song by its name.</p>
+
+      </div>
+    </section>
   </Transition>
 
   <footer @click="toggled[0] = !toggled[0]"
-    :class="[toggled[0] ? 'w-2/3' : 'w-full', 'announcement-banner transition-all duration-800']">
-    <span>Tracker Disabled. Coming back summer 2028.</span>
+    :class="[toggled[0] ? 'lg:w-2/3' : 'w-full', 'announcement-banner']">
+    <span >Tracker Disabled. Coming back summer 2028. Click here for more info.</span>
   </footer>
 </template>
 

@@ -96,44 +96,44 @@ const carouselScroll = (deltaY) => {
         <p>
           Here are some of the skills and technologies I have experience with:
         </p>
-        <article>
-            <h3 class="font-black text-lg">Hard Skills</h3>
-            <ul class="flex flex-wrap gap-2">
-              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-gradient-to-r from-red-600 to-red-400 rounded-full">Mathematics & Data Analysis</li>
-              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-gradient-to-l from-neutral-400 to-neutral-500 rounded-full">Modeling</li>
-              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-conic/decreasing from-lime-500 via-blue-500 to-lime-500 rounded-full">UI Design</li>
-              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-conic from-neutral-500 via-neutral-50 to-neutral-500 rounded-full">UX Design</li>
+        <article class="flex flex-col gap-2">
+            <p class="font-bold text-lg">Hard Skills</p>
+            <ul class="flex flex-wrap gap-3">
+              <li class="skill-button bg-gradient-to-r from-red-400 to-rose-500">Mathematics & Data Analysis</li>
+              <li class="skill-button bg-gradient-to-l from-neutral-400 to-zinc-500">Modeling</li>
+              <li class="skill-button bg-conic/decreasing from-lime-500 via-blue-500 to-lime-500">UI Design</li>
+              <li class="skill-button bg-neutral-200">UX Design</li>
             </ul>
         </article>
-        <article>
-            <h3 class="font-black text-lg">Soft Skills</h3>
-            <ul class="flex flex-wrap gap-2">
-              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-rose-400 rounded-full">Teamwork & Collaboration</li>
-              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-lime-300 rounded-full">Problem Solving</li>
-              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-gradient-to-tr from-teal-200 to-teal-500 rounded-full">Adaptability</li>
+        <article class="flex flex-col gap-2">
+            <p class="font-bold text-lg">Soft Skills</p>
+            <ul class="flex flex-wrap gap-3">
+              <li class="skill-button bg-gradient-to-r from-indigo-400 to-purple-600">Teamwork & Collaboration</li>
+              <li class="skill-button bg-gradient-to-r from-lime-300 to-amber-500">Problem Solving</li>
+              <li class="skill-button bg-gradient-to-tr from-teal-200 to-sky-500">Adaptability</li>
             </ul>
         </article>
-        <article>
-            <h3 class="font-black text-lg">Technologies</h3>
-            <ul class="flex flex-wrap gap-2">
-              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md transition-all px-2 py-1 font-bold bg-gradient-to-bl from-blue-600 to-yellow-400 rounded-full">Python</li>
-              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md transition-all px-2 py-1 font-bold bg-yellow-300 rounded-full">JavaScript</li>
-              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md transition-all px-2 py-1 font-bold bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">C/C++</li>
-              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md transition-all px-2 py-1 font-bold bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">C#</li>
-              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md transition-all px-2 py-1 font-bold bg-emerald-700 rounded-full">Vue.js</li>
-              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md transition-all px-2 py-1 font-bold bg-sky-500 rounded-full">Tailwind CSS</li>
-              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md transition-all px-2 py-1 font-bold bg-orange-500 rounded-full">SQL</li>
-              <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md transition-all px-2 py-1 font-bold bg-red-500 rounded-full">Ruby</li>
+        <article class="flex flex-col gap-2">
+            <p class="font-bold text-lg">Technologies</p>
+            <ul class="flex flex-wrap gap-3">
+              <li class="skill-button bg-gradient-to-bl from-blue-400 to-yellow-400">Python</li>
+              <li class="skill-button bg-gradient-to-r from-yellow-300 to-amber-400">JavaScript</li>
+              <li class="skill-button bg-gradient-to-r from-blue-600 to-blue-800">C/C++</li>
+              <li class="skill-button bg-gradient-to-r from-blue-600 to-blue-800">C#</li>
+              <li class="skill-button bg-gradient-to-r from-emerald-500 to-teal-300">Vue.js</li>
+              <li class="skill-button bg-gradient-to-r from-sky-300 to-sky-600">Tailwind CSS</li>
+              <li class="skill-button bg-gradient-to-r from-orange-400 to-amber-500">SQL</li>
+              <li class="skill-button bg-gradient-to-r from-red-500 to-rose-600">Ruby</li>
             </ul>
         </article>
       </section>
 
       <section id="languages" class="flex flex-col gap-2">
-        <h2 class="title">Languages</h2>
-        <ul class="flex flex-wrap gap-2">
-          <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-gradient-to-r from-blue-500  via-neutral-50 to-red-500 rounded-full">French (Native)</li>
-          <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-conic from-red-400 via-red-500 to-red-400 rounded-full">English</li>
-          <li class="cursor-pointer dark:text-neutral-900 hover:scale-105 active:scale-110 border border-neutral-500/50 drop-shadow-md px-2 py-1 font-bold transition-all bg-gradient-to-r from-red-500 to-yellow-300 rounded-full">Spanish</li>
+        <h2>Languages</h2>
+        <ul class="flex flex-wrap gap-3">
+          <li class="skill-button bg-neutral-200 rounded-full">French (Native)</li>
+          <li class="skill-button bg-neutral-200 rounded-full">English</li>
+          <li class="skill-button bg-neutral-200 rounded-full">Spanish</li>
         </ul>
       </section>
 
@@ -145,21 +145,21 @@ const carouselScroll = (deltaY) => {
 
 
             <div class="relative flex flex-col items-center">
-              <button @click="toggled[1] = !toggled[1]" class="p-2 rounded-xl hover:scale-105 bg-emerald-300 dark:bg-emerald-700 drop-shadow border border-neutral-500/50 active:-translate-y-1 transition-all font-bold cursor-not-allowed w-24">LinkedIn</button>
+              <button @click="toggled[1] = !toggled[1]" class="p-2 rounded-xl hover:scale-105 bg-emerald-300 dark:bg-emerald-700 drop-shadow border border-neutral-500/50 active:-translate-y-1 transition-all font-bold cursor-pointer w-24">LinkedIn</button>
              <transition>
                 <div v-if="toggled[1]" class="absolute z-50 border border-neutral-500/50 top-10 bg-neutral-900 p-2 my-2 w-max rounded-xl font-bold text-sm text-white">No LinkedIn.</div>
               </transition>
             </div>
 
             <div class="relative flex flex-col items-center">
-              <button @click="toggled[2] = !toggled[2]" class="p-2 rounded-xl hover:scale-105 bg-emerald-300 dark:bg-emerald-700 drop-shadow border border-neutral-500/50 active:-translate-y-1 transition-all font-bold cursor-not-allowed w-24">Email</button>
+              <button @click="toggled[2] = !toggled[2]" class="p-2 rounded-xl hover:scale-105 bg-emerald-300 dark:bg-emerald-700 drop-shadow border border-neutral-500/50 active:-translate-y-1 transition-all font-bold cursor-pointer w-24">Email</button>
               <transition>
                 <div v-if="toggled[2]" class="absolute z-50 border border-neutral-500/50 top-10 bg-neutral-900 p-2 my-2 w-max rounded-xl font-bold text-sm text-white">No mail.</div>
               </transition>
             </div>
             
             <div class="relative flex flex-col items-center">
-              <button @click="toggled[3] = !toggled[3]" class="p-2 rounded-xl hover:scale-105 bg-emerald-300 dark:bg-emerald-700 drop-shadow border border-neutral-500/50 active:-translate-y-1 transition-all font-bold cursor-not-allowed w-24">Discord</button>
+              <button @click="toggled[3] = !toggled[3]" class="p-2 rounded-xl hover:scale-105 bg-emerald-300 dark:bg-emerald-700 drop-shadow border border-neutral-500/50 active:-translate-y-1 transition-all font-bold cursor-pointer w-24">Discord</button>
               <transition>
                 <div v-if="toggled[3]" class="absolute z-50 border border-neutral-500/50 top-10 bg-neutral-900 p-2 my-2 w-max rounded-xl font-bold text-sm text-white">@maximedu91</div>
               </transition>

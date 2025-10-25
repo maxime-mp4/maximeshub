@@ -98,5 +98,9 @@ ul {
 }
 
 .announcement-banner {
-  @apply relative min-h-8 items-center flex justify-center bg-gradient-to-r from-emerald-500 to-teal-600 text-neutral-800 text-center
+  @apply relative min-h-8 items-center flex justify-center bg-gradient-to-r from-emerald-500 to-teal-600 text-neutral-800 text-center cursor-pointer hover:underline transition-all duration-800
+}
+
+.skill-button {
+  @apply cursor-pointer dark:text-neutral-900 active:-translate-y-0.5 hover:-translate-y-0.5 border px-2 py-1 font-bold transition-all rounded-full
 }
