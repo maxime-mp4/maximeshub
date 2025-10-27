@@ -2,10 +2,18 @@
 import ProjectCard from '@/components/ProjectCard.vue';
 import { ref } from 'vue';
 
+const props = defineProps({
+  mainToggled: {
+    type: Array,
+    required: true
+  }
+});
+
 const toggled = ref([]);
 const carousel = ref(null);
 
 const onWheel = (e) => {
+  if (props.mainToggled[0]) return;
   e.preventDefault();
   carousel.value.scrollBy({
     left: e.deltaY,
@@ -13,6 +21,7 @@ const onWheel = (e) => {
 };
 
 const carouselScroll = (deltaY) => {
+  if (props.mainToggled[0]) return;
   const maxScroll = carousel.value.scrollWidth - carousel.value.clientWidth;
   const currentScroll = carousel.value.scrollLeft;
   
@@ -102,7 +111,7 @@ const carouselScroll = (deltaY) => {
               <li class="skill-button bg-gradient-to-r from-red-400 to-rose-500">Mathematics & Data Analysis</li>
               <li class="skill-button bg-gradient-to-l from-neutral-400 to-zinc-500">Modeling</li>
               <li class="skill-button bg-conic/decreasing from-lime-500 via-blue-500 to-lime-500">UI Design</li>
-              <li class="skill-button bg-neutral-200">UX Design</li>
+              <li class="skill-button dark:bg-neutral-200 bg-neutral-800">UX Design</li>
             </ul>
         </article>
         <article class="flex flex-col gap-2">
@@ -131,9 +140,9 @@ const carouselScroll = (deltaY) => {
       <section id="languages" class="flex flex-col gap-2">
         <h2>Languages</h2>
         <ul class="flex flex-wrap gap-3">
-          <li class="skill-button bg-neutral-200 rounded-full">French (Native)</li>
-          <li class="skill-button bg-neutral-200 rounded-full">English</li>
-          <li class="skill-button bg-neutral-200 rounded-full">Spanish</li>
+          <li class="skill-button bg-neutral-800 dark:bg-neutral-200 rounded-full">French (Native)</li>
+          <li class="skill-button bg-neutral-800 dark:bg-neutral-200 rounded-full">English</li>
+          <li class="skill-button bg-neutral-800 dark:bg-neutral-200 rounded-full">Spanish</li>
         </ul>
       </section>
 

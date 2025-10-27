@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted, computed, Transition, nextTick } from 'vue'
+import { ref, onMounted, onUnmounted, computed, Transition, nextTick, watch } from 'vue'
 import HomeView from './views/HomeView.vue'
 import NavbarComponent from './components/NavbarComponent.vue'
 
@@ -32,6 +32,8 @@ const handleScroll = () => {
 
 onMounted(async () => {
 
+  document.body.style.overflow = ''
+
   if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark')
     theme.value = 'dark'
@@ -53,6 +55,17 @@ onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
 
+watch(
+  () => toggled.value[0],
+  (isDisabled) => {
+    if (isDisabled) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = '' // remet la valeur par défaut
+    }
+  }
+)
+
 
 
 // Functions
@@ -64,6 +77,7 @@ function switchTheme() {
 }
 
 function scrollUp() {
+  if(toggled[0].value) return;
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
@@ -104,9 +118,9 @@ function updateNavbarHighlight() {
     <span>Tracker Disabled. Coming back summer 2028. Click here for more info.</span>
   </header>
 
-  <NavbarComponent :class="[{'-translate-x-1/3': toggled[0]}]" :scrollY="scrollY" :headerRef="headerRef"
+  <NavbarComponent :class="[{'-translate-x-1/3 lg:blur pointer-events-none': toggled[0]} ]" :scrollY="scrollY" :headerRef="headerRef"
     :navbarElements="navbarElements" />
-  <HomeView :class="[{'-translate-x-1/3': toggled[0]}]"
+  <HomeView :mainToggled="toggled"  :class="[{'-translate-x-1/3 lg:blur pointer-events-none': toggled[0]}]"
     class="mx-8 lg:w-3/4 xl:w-1/2 lg:mx-auto mb-24 transition-all duration-1000" />
 
   <ul class="p-2 flex sticky bottom-0 gap-2">
@@ -129,7 +143,7 @@ function updateNavbarHighlight() {
   <Transition name="translate-left">
 
     <section v-if="toggled[0]"
-      class="flex flex-col gap-6 right-0 z-99 w-full px-12 min-h-screen lg:w-7/20 bg-neutral-800 fixed top-0 lg:border border-neutral-500 lg:rounded-2xl p-4">
+      class="flex flex-col gap-6 right-0 z-99 w-full px-12 h-full lg:w-7/20 overflow-auto bg-neutral-100 dark:bg-neutral-800 fixed top-0 lg:border-l border-neutral-500/50 dark:border-neutral-500 p-4">
       
       <header class="flex justify-between items-center">
         <p class="font-bold text-lg lg:text-xl">Tracker Current State</p>

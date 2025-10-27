@@ -102,5 +102,5 @@ ul {
 }
 
 .skill-button {
-  @apply cursor-pointer dark:text-neutral-900 active:-translate-y-0.5 hover:-translate-y-0.5 border px-2 py-1 font-bold transition-all rounded-full
+  @apply cursor-pointer dark:text-neutral-900 active:-translate-y-0.5 hover:-translate-y-0.5 border px-2 py-1 font-bold transition-all rounded-full border border-neutral-500/50 text-neutral-100 dark:border-neutral-200/50
 }
