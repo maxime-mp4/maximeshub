@@ -12,6 +12,16 @@ const toggled = ref([])
 // Computed properties
 const currentTheme = computed(() => theme.value)
 
+const documentTitles = ["Maxime's Hub", "Idk what to put here", "Still working on it (absolutely not)", "Come back later?", "Did you know ? I like pizza.", "Vue.js is pretty cool", "JavaScript everywhere!", "Don't forget to smile :)", "Maybe a blog soon?", "Stay curious!", "Coding is fun!", "Learning every day!", "Building cool stuff!", "Tech enthusiast!"];
+
+const randomTitle = () => {
+  const randomIndex = Math.floor(Math.random() * documentTitles.length);
+  document.title = documentTitles[randomIndex];
+};
+
+setInterval(randomTitle, 6000);
+
+
 // Variables
 
 const navbarElements = [{ href: 'home', icon: 'fa-home', text: 'Home' },
@@ -28,9 +38,12 @@ const handleScroll = () => {
   scrollY.value = window.scrollY
 }
 
+
 // Mounted/Unmounted
 
 onMounted(async () => {
+
+  randomTitle();
 
   document.body.style.overflow = ''
 
