@@ -90,7 +90,7 @@ function switchTheme() {
 }
 
 function scrollUp() {
-  if(toggled[0].value) return;
+  if(toggled.value[0]) return;
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
